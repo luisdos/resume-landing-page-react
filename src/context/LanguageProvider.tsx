@@ -1,14 +1,10 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { dictionaries } from '@/i18n'
 
-type Lang = 'es' | 'en'
-type I18n = typeof dictionaries['es']
+type Lang = keyof typeof dictionaries;           // 'es' | 'en'
+type I18n = (typeof dictionaries)[Lang];         // unión de ambos
 
-type LangCtx = {
-  lang: Lang
-  t: I18n
-  setLang: (l: Lang) => void
-}
+type LangCtx = { lang: Lang; t: I18n; setLang: (l: Lang) => void }
 
 const LANG_KEY = 'lang'
 const Ctx = createContext<LangCtx | null>(null)
@@ -35,7 +31,7 @@ export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({childre
     document.title = dictionaries[lang].meta.title
   }, [lang])
 
-  const value = useMemo(() => ({ lang, setLang, t: dictionaries[lang] }), [lang])
+  const value = useMemo(() => ({ lang, setLang, t: dictionaries[lang] as I18n }), [lang])
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>
 }
