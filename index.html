@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luis Flores — Software Engineer</title>
+    <meta name="description" content="Portafolio de Luis Carlos Flores Contreras — Full‑Stack Software Engineer (.NET, React, Angular, Azure)." />
+    <meta property="og:description" content="Full‑Stack Engineer con 9+ años de experiencia. .NET, React, Angular, Azure, SQL Server, Node.js." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[radial-gradient(1200px_600px_at_80%_-10%,rgba(124,156,255,.15),transparent_60%),_radial-gradient(1000px_600px_at_-10%_20%,rgba(109,240,194,.10),transparent_60%),_#0b0f17] text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch(e){}
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --ring: rgba(124,156,255,.45); }
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+}
+
+.card {
+  @apply border rounded-2xl shadow-md;
+  @apply border-slate-200 bg-white;
+  @apply dark:border-white/10 dark:bg-slate-900/50;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl border;
+  @apply border-slate-300 text-slate-800;
+  @apply dark:border-white/10 dark:text-slate-100;
+}
+.btn:hover { @apply -translate-y-px transition; }
+
+.btn-primary {
+  @apply text-white border-transparent;
+  background: linear-gradient(180deg, #7c9cff, #5a7cfa);
+}
+
+.btn-ghost {
+  @apply bg-transparent border-slate-300 dark:border-white/20;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border text-sm;
+  @apply border-slate-300 text-slate-600;
+  @apply dark:border-white/20 dark:text-slate-300;
+}
+
+.navlink {
+  @apply px-3 py-2 rounded-lg text-slate-600 hover:bg-black/5 hover:text-slate-900;
+  @apply dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-slate-100;
+}
+
+input, textarea, select {
+  @apply w-full px-4 py-3 rounded-xl border;
+  @apply bg-white text-slate-900 border-slate-300;
+  @apply dark:bg-transparent dark:text-slate-100 dark:border-white/20;
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid var(--ring); }
