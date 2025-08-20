@@ -32,12 +32,12 @@ export default function Contact(){
       <div className="max-w-[1120px] mx-auto px-5 grid md:grid-cols-[1.1fr_.9fr] gap-5">
         <div className="card p-4">
           <h2 className="text-2xl mb-1">{t.contactTitle}</h2>
-          <p className="text-slate-300">{t.contactLead}</p>
+          <p className="text-main ">{t.contactLead}</p>
           <div className="flex gap-3 mt-3 flex-wrap">
             <a className="btn btn-primary" href="mailto:luisfloresvid@gmail.com">✉️ luisfloresvid@gmail.com</a>
             <button className="btn" onClick={copyEmail}>{t.copyBtn}</button>
           </div>
-          {msg && <p className="text-slate-300 mt-2">{msg}</p>}
+          {msg && <p className="text-main  mt-2">{msg}</p>}
         </div>
         <div className="card p-4">
           <h2 className="text-2xl mb-2">{t.quickMsgTitle}</h2>

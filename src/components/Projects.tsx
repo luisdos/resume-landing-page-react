@@ -4,7 +4,7 @@ import { useLang } from '@/context/LanguageProvider'
 const Project: React.FC<{title:string, desc:string, roadmap?:boolean}> = ({title, desc, roadmap}) => (
   <article className="card p-4">
     <h3 className="text-xl mb-1">{title}</h3>
-    <p className="text-slate-300" dangerouslySetInnerHTML={{__html: desc}} />
+    <p className="text-main" dangerouslySetInnerHTML={{__html: desc}} />
     <div className="flex gap-2 mt-2">
       <a className="btn btn-ghost" href="#">🔗 Demo</a>
       <a className="btn btn-ghost" href="#">{roadmap ? '🗺️ Roadmap' : '💻 Código'}</a>

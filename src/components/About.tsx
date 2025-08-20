@@ -8,7 +8,7 @@ export default function About(){
       <div className="max-w-[1120px] mx-auto px-5">
         <div className="card p-4">
           <h2 className="text-2xl mb-2">{t.aboutTitle}</h2>
-          <p className="text-slate-300" dangerouslySetInnerHTML={{__html: t.aboutP}} />
+          <p className="text-main " dangerouslySetInnerHTML={{__html: t.aboutP}} />
         </div>
       </div>
     </section>

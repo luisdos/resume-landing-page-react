@@ -12,7 +12,7 @@ export default function Hero(){
         <div>
           <Badge>{t.hero.badge}</Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mt-2 mb-3">{t.hero.h1}</h1>
-          <p className="text-slate-300 max-w-[60ch]" dangerouslySetInnerHTML={{__html: t.hero.lead}} />
+          <p className="text-main  max-w-[60ch]" dangerouslySetInnerHTML={{__html: t.hero.lead}} />
           <div className="flex flex-wrap gap-3 mt-5">
             <Button as="a" href="mailto:luisfloresvid@gmail.com" variant="primary">{t.hero.ctaContact}</Button>
             <Button as="a" href="/LuisFlores_CV.pdf">{t.hero.ctaCV}</Button>
@@ -28,7 +28,7 @@ export default function Hero(){
         </div>
         <div className="card p-4">
           <h2 className="text-xl mb-2">Highlights</h2>
-          <ul className="list-disc pl-5 text-slate-300 space-y-1">
+          <ul className="list-disc pl-5 text-main  space-y-1">
             <li dangerouslySetInnerHTML={{__html: t.highlights[0]}} />
             <li dangerouslySetInnerHTML={{__html: t.highlights[1]}} />
             <li dangerouslySetInnerHTML={{__html: t.highlights[2]}} />

@@ -50,3 +50,7 @@ input, textarea, select {
   @apply dark:bg-transparent dark:text-slate-100 dark:border-white/20;
 }
 input:focus, textarea:focus, select:focus { outline: 2px solid var(--ring); }
+
+.text-main {
+  @apply text-gray-800 dark:text-slate-300;
+}
