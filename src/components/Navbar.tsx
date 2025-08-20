@@ -190,20 +190,25 @@ export default function Navbar() {
         </nav>
       </div>
 
-      {/* Mobile panel */}
+      {/* Mobile panel (fixed, fuera del flujo; no ocupa alto al cerrarse) */}
       <div
         id="mobile-menu"
-        className={`md:hidden transition-all origin-top ${
-          open ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 pointer-events-none'
-        }`}
+        className={`
+          md:hidden fixed left-0 right-0 top-16 z-40
+          transition-all duration-200
+          ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none'}
+        `}
       >
-        <div className={`${container} pb-3`}>
-          <div className="mt-1 grid gap-1 p-2 rounded-2xl border border-slate-200/70 dark:border-white/10 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl">
+        <div className="max-w-[1120px] mx-auto px-4 md:px-5 pb-2">
+          <div className="mt-1 grid gap-1 p-2 rounded-2xl border
+                          border-slate-200/70 dark:border-white/10
+                          bg-white/90 dark:bg-slate-900/70 backdrop-blur-xl">
             {navItems.map(item => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
                 className={`block ${linkBase} ${active === item.id ? linkActive : ''}`}
+                onClick={() => setOpen(false)}
               >
                 {item.label}
               </a>
@@ -216,8 +221,9 @@ export default function Navbar() {
                 title={t.language}
                 value={lang}
                 onChange={e => setLang(e.target.value as any)}
-                className="ml-auto rounded-lg border border-slate-300 dark:border-white/20 bg-transparent text-slate-800 dark:text-slate-200 px-2.5 py-1.5
-                           focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                className="ml-auto rounded-lg border border-slate-300 dark:border-white/20 bg-transparent
+                          text-slate-800 dark:text-slate-200 px-2.5 py-1.5
+                          focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               >
                 <option value="es">ES</option>
                 <option value="en">EN</option>
