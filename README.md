@@ -22,7 +22,3 @@ npm run build
 - Import this repo in Vercel (Framework: **Vite** or **Other**)
 - Build Command: `npm run build`
 - Output Directory: `dist`
-
-Place your `LuisFlores_CV.pdf` at project root (it will be served at `/LuisFlores_CV.pdf`).
-
-Update links (email/GitHub/LinkedIn) inside components as needed.
